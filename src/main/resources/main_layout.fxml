@@ -13,18 +13,18 @@
     <Label text="User Name:"
            GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 
-    <TextField fx:id="usernameField" onKeyPressed="#usernameChanged"
+    <TextField fx:id="usernameField"
             GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
     <Label text="Password:"
            GridPane.columnIndex="0" GridPane.rowIndex="2"/>
 
-    <PasswordField fx:id="passwordField" onKeyPressed="#passwordChanged"
+    <PasswordField fx:id="passwordField"
                    GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
     <HBox spacing="10" alignment="bottom_right"
           GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button text="Sign In"
+        <Button fx:id="migrateButton" text="Sign In"
                 onAction="#migrate"/>
     </HBox>
 </GridPane>

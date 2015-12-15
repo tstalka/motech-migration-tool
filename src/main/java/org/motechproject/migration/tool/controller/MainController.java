@@ -1,12 +1,17 @@
 package org.motechproject.migration.tool.controller;
 
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class MainController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainController implements Initializable {
 
     @FXML
     private TextField usernameField;
@@ -15,14 +20,15 @@ public class MainController {
     private PasswordField passwordField;
 
     @FXML
+    private Button migrateButton;
+
+    @FXML
     protected void migrate(ActionEvent event) {
     }
 
-    @FXML
-    protected void usernameChanged(Event event) {
-    }
-
-    @FXML
-    protected void passwordChanged(Event event) {
+    public void initialize(URL location, ResourceBundle resources) {
+        migrateButton.disableProperty().bind(Bindings
+                .isEmpty(usernameField.textProperty())
+                .or(passwordField.textProperty().isEmpty()));
     }
 }
